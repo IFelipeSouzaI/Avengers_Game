@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Trovao.ogg-21cf54745447ce2240dc15d6a7771bbb.oggstr"
+
+[deps]
+
+source_file="res://audios/SFX/Trovao.ogg"
+dest_files=[ "res://.import/Trovao.ogg-21cf54745447ce2240dc15d6a7771bbb.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

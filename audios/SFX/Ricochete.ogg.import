@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ricochete.ogg-623d32b13eebaf4bfbb0b515cca5f91b.oggstr"
+
+[deps]
+
+source_file="res://audios/SFX/Ricochete.ogg"
+dest_files=[ "res://.import/Ricochete.ogg-623d32b13eebaf4bfbb0b515cca5f91b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

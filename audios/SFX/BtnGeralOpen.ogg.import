@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/BtnGeralOpen.ogg-64b2a519a2ff39d2f7de849df97eb0d1.oggstr"
+
+[deps]
+
+source_file="res://audios/SFX/BtnGeralOpen.ogg"
+dest_files=[ "res://.import/BtnGeralOpen.ogg-64b2a519a2ff39d2f7de849df97eb0d1.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

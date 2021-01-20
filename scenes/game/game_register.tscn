@@ -1,0 +1,110 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scripts/game_register.gd" type="Script" id=1]
+[ext_resource path="res://sprites/gui/bg.png" type="Texture" id=2]
+[ext_resource path="res://fontes/PixelOperator.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://sprites/gui/btnGray.png" type="Texture" id=4]
+[ext_resource path="res://sprites/gui/btGray_press.png" type="Texture" id=5]
+[ext_resource path="res://sprites/gui/btnVerificar.png" type="Texture" id=6]
+[ext_resource path="res://sprites/gui/btnVerificar_press.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=3]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("opacity:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("opacity:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "change"
+} ]
+}
+
+[node name="game_register" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="bg" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="HTTP_get" type="HTTPRequest" parent="."]
+
+[node name="insert_text" type="LineEdit" parent="."]
+margin_left = 55.0
+margin_top = 249.0
+margin_right = 355.0
+margin_bottom = 279.0
+custom_fonts/font = SubResource( 1 )
+text = "Insira seu Nome"
+align = 1
+
+[node name="report" type="Label" parent="."]
+margin_top = 204.0
+margin_right = 420.0
+margin_bottom = 234.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+
+[node name="start" type="TouchScreenButton" parent="."]
+position = Vector2( 55, 374 )
+normal = ExtResource( 4 )
+pressed = ExtResource( 5 )
+
+[node name="verify" type="TouchScreenButton" parent="."]
+position = Vector2( 55, 294 )
+normal = ExtResource( 6 )
+pressed = ExtResource( 7 )
+
+[node name="opacity" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="anim" type="AnimationPlayer" parent="."]
+autoplay = "in"
+anims/in = SubResource( 3 )
+anims/out = SubResource( 4 )
+
+[connection signal="request_completed" from="HTTP_get" to="." method="_on_HTTP_get_request_completed"]
+[connection signal="text_changed" from="insert_text" to="." method="_on_insert_text_text_changed"]
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="verify" to="." method="_on_verify_pressed"]

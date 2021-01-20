@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Canhao.ogg-da5a977ad889419422d68eca6da79e61.oggstr"
+
+[deps]
+
+source_file="res://audios/SFX/Canhao.ogg"
+dest_files=[ "res://.import/Canhao.ogg-da5a977ad889419422d68eca6da79e61.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

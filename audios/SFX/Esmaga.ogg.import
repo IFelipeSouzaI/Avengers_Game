@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Esmaga.ogg-8c02fb78d7ca5e6375e3c8f2074c3622.oggstr"
+
+[deps]
+
+source_file="res://audios/SFX/Esmaga.ogg"
+dest_files=[ "res://.import/Esmaga.ogg-8c02fb78d7ca5e6375e3c8f2074c3622.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

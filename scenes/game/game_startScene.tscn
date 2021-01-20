@@ -1,0 +1,211 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scripts/game_startScene.gd" type="Script" id=1]
+[ext_resource path="res://sprites/gui/Bg_startScene.png" type="Texture" id=2]
+[ext_resource path="res://sprites/gui/logo.png" type="Texture" id=3]
+[ext_resource path="res://scenes/objects/object_manopla.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/objects/object_canon.tscn" type="PackedScene" id=5]
+[ext_resource path="res://fontes/PixelOperator.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://sprites/gui/bg.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "opacity"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 210, 360 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "in"
+length = 3.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("trans:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("cam:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 103 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("logo:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 3, 3.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("press:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 3.5, 3.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("trans:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.5, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 103 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "out"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("logo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("cam:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 103 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "change"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("press:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[node name="game_startScene" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="bg" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="logo" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 210, 76 )
+scale = Vector2( 1.7, 1.7 )
+texture = ExtResource( 3 )
+
+[node name="object_manopla" parent="." instance=ExtResource( 4 )]
+position = Vector2( 208, 238 )
+
+[node name="object_canon" parent="." instance=ExtResource( 5 )]
+position = Vector2( 64, 228 )
+
+[node name="object_canon2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 356, 228 )
+
+[node name="press" type="Label" parent="."]
+editor/display_folded = true
+visible = false
+margin_top = 630.0
+margin_right = 420.0
+margin_bottom = 662.0
+custom_fonts/font = SubResource( 1 )
+text = "Toque para Jogar"
+align = 1
+valign = 1
+
+[node name="anim" type="AnimationPlayer" parent="press"]
+autoplay = "opacity"
+anims/opacity = SubResource( 2 )
+
+[node name="start" type="TouchScreenButton" parent="."]
+position = Vector2( 210, 360 )
+shape = SubResource( 3 )
+
+[node name="trans" type="Sprite" parent="."]
+position = Vector2( 0, 103 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="cam" type="Camera2D" parent="."]
+position = Vector2( 0, 103 )
+anchor_mode = 0
+current = true
+
+[node name="anim" type="AnimationPlayer" parent="."]
+autoplay = "in"
+anims/in = SubResource( 4 )
+anims/out = SubResource( 5 )
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Tiro.ogg-20f73686a15f6e9b3cd2a5ff467f14cb.oggstr"
+
+[deps]
+
+source_file="res://audios/SFX/Tiro.ogg"
+dest_files=[ "res://.import/Tiro.ogg-20f73686a15f6e9b3cd2a5ff467f14cb.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

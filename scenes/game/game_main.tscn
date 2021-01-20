@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://sprites/bg_map/Bg.png" type="Texture" id=1]
+[ext_resource path="res://scenes/objects/HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/objects/object_canon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/objects/object_manopla.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/objects/object_plataformSpawn.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/objects/object_enemySpawner.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scripts/cam.gd" type="Script" id=7]
+
+[node name="game_main" type="Node2D"]
+
+[node name="bg" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="HUD" parent="." instance=ExtResource( 2 )]
+
+[node name="object_canon1" parent="." instance=ExtResource( 3 )]
+position = Vector2( 64, 126 )
+
+[node name="object_canon2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 356, 126 )
+sound_control = true
+
+[node name="object_manopla" parent="." instance=ExtResource( 4 )]
+position = Vector2( 208, 137 )
+
+[node name="object_plataformSpawn" parent="." instance=ExtResource( 5 )]
+position = Vector2( 61, 277 )
+
+[node name="object_plataformSpawn2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 113, 221 )
+
+[node name="object_plataformSpawn3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 307, 221 )
+
+[node name="object_plataformSpawn4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 359, 277 )
+
+[node name="object_enemySpawner" parent="." instance=ExtResource( 6 )]
+
+[node name="cam" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+script = ExtResource( 7 )
+
+[connection signal="less_enemy" from="object_enemySpawner" to="HUD" method="_on_object_enemySpawner_less_enemy"]
+[connection signal="less_gem" from="object_enemySpawner" to="HUD" method="_on_object_enemySpawner_less_gem"]
+[connection signal="less_gem" from="object_enemySpawner" to="object_manopla" method="_on_object_enemySpawner_less_gem"]

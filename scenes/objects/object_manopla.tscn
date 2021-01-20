@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scripts/object_manopla.gd" type="Script" id=1]
+[ext_resource path="res://sprites/objects/Manopla.png" type="Texture" id=2]
+[ext_resource path="res://sprites/objects/joia1.png" type="Texture" id=3]
+[ext_resource path="res://sprites/objects/joia2.png" type="Texture" id=4]
+[ext_resource path="res://sprites/objects/joia3.png" type="Texture" id=5]
+[ext_resource path="res://sprites/objects/joia4.png" type="Texture" id=6]
+[ext_resource path="res://sprites/objects/joia5.png" type="Texture" id=7]
+[ext_resource path="res://sprites/objects/joia6.png" type="Texture" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "anim"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -3 ), Vector2( 0, 5 ) ]
+}
+
+[node name="object_manopla" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="sprite" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 0, 3.23387 )
+texture = ExtResource( 2 )
+
+[node name="gem0" type="Sprite" parent="sprite"]
+position = Vector2( -3, -3 )
+texture = ExtResource( 3 )
+
+[node name="gem1" type="Sprite" parent="sprite"]
+position = Vector2( -9, -9 )
+texture = ExtResource( 4 )
+
+[node name="gem2" type="Sprite" parent="sprite"]
+position = Vector2( -5, -10 )
+texture = ExtResource( 5 )
+
+[node name="gem3" type="Sprite" parent="sprite"]
+position = Vector2( -1, -10 )
+texture = ExtResource( 6 )
+
+[node name="gem4" type="Sprite" parent="sprite"]
+position = Vector2( 4, -10 )
+texture = ExtResource( 7 )
+
+[node name="gem5" type="Sprite" parent="sprite"]
+position = Vector2( 9, -4 )
+texture = ExtResource( 8 )
+
+[node name="anim" type="AnimationPlayer" parent="sprite"]
+autoplay = "anim"
+anims/anim = SubResource( 1 )
+
